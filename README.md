@@ -79,18 +79,21 @@ This combination allowed the final model to leverage both labeled and unlabeled 
 
 
 
-Robot Images
-      │
-      ├──────────────┐
-      │              │
-Labeled Images   Unlabeled Images
-      │              │
-    ResNet18     Encoder-Decoder
-      │              │
-      └──────┬───────┘
-             │
- Semi-Supervised Model
-             │
- Robot Pose Angle
+```mermaid
+flowchart TD
+
+A[Robot Images]
+
+A --> B[Labeled Images]
+A --> C[Unlabeled Images]
+
+B --> D[ResNet18]
+C --> E[Encoder-Decoder]
+
+D --> F[Semi-Supervised Model]
+E --> F
+
+F --> G[Robot Pose Angle]
+```
 
 
